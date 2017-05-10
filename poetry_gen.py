@@ -2,10 +2,33 @@
 import random #needed for random selection of words
 
 def main(file):
-        """Opens up one of the two random files."""
-        animal = file.open("Animals-"+str(random.randrange(1,2), "r")
-        animallist = animal.split(",")
-        subject = animals[random.range(0,len(animals)+1)
+        """Opens up one of the two random files and creates an animal list and a verb list"""
+        #Sentence subject
+	def subject():
+		animal = file.open("Animals-"+str(random.randrange(1,2), "r") #opens random animals file, between 1 or 2 syllables
+		animal_list = animal.split(",")
+		sentence_animal = animal_list[random.range(0,len(animal_list)+1)      #turns file in list, and grabs an animal randomly
+		return sentence_animal
+					      
+	#Sentence object
+	def object():
+		x = random.randrange(0,2)
+		if x == 0:
+			misc = file.open("Misc-"+str(random.randrange(1,2), "r")
+			misc_list = misc.split(",")
+			sentence_misc = misc_list[random.range(0,len(misc_list+1) #generates the object of the sentence
+			return sentence_misc
+		else:
+			animal = file.open("Animals-"+str(random.randrange(1,2), "r") #opens random animals file, between 1 or 2 syllables
+			animal_list = animal.split(",")
+			sentence_animal = animal_list[random.range(0,len(animal_list)+1)
+			return sentence_animal
+        
+	#Sentence verb
+	def verb():
+		verb = file.open("Verbs-"+str(random.randrange(1,2)))
+		verb_list = verb.split(",")
+		verbs = verb_list[random.randrange(0,len(verb_list)+1)]     #turns file in list, and grabs a verb randomly
 
 class noun_phrase:
         def __init__(noun,word,adj,article):
